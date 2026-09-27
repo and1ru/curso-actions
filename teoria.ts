@@ -15,4 +15,11 @@
 ¿Que es un check out en github actions?
 
 ¿Como optimizar CI?
+
+Secrets
+
+Token y variables de entorno
+
+Deploy keys
+Enviroments
 */
