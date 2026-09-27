@@ -19,3 +19,9 @@ jobs:
           run: bun run vitest:run
         - name: build
           run: bun run dev
+        # en este paso poner los test E2E
+        # - name: E2E
+          # uses: 
+        - name: heroku
+          run: ${{ secrets.GITHUB_TOKEN }}
+          # lalalala
