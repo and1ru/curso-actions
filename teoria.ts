@@ -11,6 +11,7 @@
 ¿Puedo tener mas de 1 archivo?
 ¿Que Worksflow puedo tener?
 
-
+¿Que es un pipeline?
+¿Que es un check out en github actions?
 
 */

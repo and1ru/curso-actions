@@ -1,0 +1,17 @@
+name: pipeline
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    pipeline:
+      runs-on: ubuntu-24.04
+      steps:
+        - uses: actions/checkout@v7
+        - uses: actions/setup-node@v7
+          with:
+            node-version: "22"
+        - name: instalar dependencias
+          run: bun i
