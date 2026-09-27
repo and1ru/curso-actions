@@ -17,8 +17,10 @@ jobs:
   hola:
     # runs-on -> dice en que sistema correra
     runs-on: ubuntu-22.04
-    # steps -> 
+    # steps -> dice que pasos va a ejecutar
     steps:
       # nombre del paso
       - name: Echo the message
         run: echo "hola"
+      - name: goku
+        run: console.log("hola")
