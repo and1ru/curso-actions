@@ -25,5 +25,5 @@ jobs:
         # - name: E2E
           # uses: 
         - name: heroku
-          run: ${{ secrets.GITHUB_TOKEN }}
+          run: echo ${{ secrets.GITHUB_TOKEN }}
           # lalalala
