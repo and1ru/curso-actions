@@ -15,3 +15,7 @@ jobs:
             bun-version: latest
         - name: instalar dependencias
           run: bun i
+        - name: test
+          run: bun run vitest:run
+        - name: build
+          run: bun run dev

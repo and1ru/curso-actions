@@ -14,4 +14,5 @@
 ¿Que es un pipeline?
 ¿Que es un check out en github actions?
 
+¿Como optimizar CI?
 */
