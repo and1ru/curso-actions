@@ -19,8 +19,8 @@ jobs:
     runs-on: ubuntu-22.04
     # steps -> dice que pasos va a ejecutar
     steps:
-      # nombre del paso
+      # nombre del paso (es opcional)
       - name: Echo the message
         run: echo "hola"
-      - name: goku
-        run: console.log("hola")
+      - name: dime la fecha
+        run: Date
