@@ -1,1 +1,24 @@
-culito: perrito
+# tiene que tener un nombre
+name: di hola
+
+# tiene que tener un evento
+# on -> dice si pasa esto haz esto
+on:
+  # cada vez que se haga un push
+  push:
+    # en la rama main
+    branches:
+      - main
+
+# esto es lo que hara cada vez que se haga un push
+# job -> es la action que se ejecutara
+jobs:
+  # este es el nombre del job
+  hola:
+    # runs-on -> dice en que sistema correra
+    runs-on: ubuntu-22.04
+    # steps -> 
+    steps:
+      # nombre del paso
+      - name: Echo the message
+        run: echo "hola"
