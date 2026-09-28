@@ -31,18 +31,21 @@ jobs:
           bun-version: latest
   
   quinto-job:
+    needs: [cuarto-job]
     runs-on: ubuntu-24.04
     steps:
       - name: instalar dependencias
         run: bun i
 
   sexto-job:
+    needs: [cuarto-job]
     runs-on: ubuntu-24.04
     steps:
       - name: test
         run: bun run vitest:run
 
   septimo-job:
+    needs: [cuarto-job]
     runs-on: ubuntu-24.04
     steps:
       - name: build
