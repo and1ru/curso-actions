@@ -29,11 +29,19 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
+      - uses: actions/upload-artifact@v7
+        with:
+          name: instalacion-bun
+          path: carpeta
   
   quinto-job:
     needs: [cuarto-job]
     runs-on: ubuntu-24.04
     steps:
+      - uses: actions/download-artifact
+        with:
+          name: instalacion-bun
+          path: carpeta
       - name: instalar dependencias
         run: bun i
 
