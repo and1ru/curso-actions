@@ -1,29 +1,30 @@
 name: pipeline
 
 on:
-    push:
-        branches: [main]
-    pull_request: 
-      branches: [main]
-      types: [opened, synchronize]
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
 
 jobs:
-    pipeline:
-      runs-on: ubuntu-24.04
-      steps:
-        - uses: actions/checkout@v7
-        - uses: oven-sh/setup-bun@v2
-          with:
-            bun-version: latest
-        - name: instalar dependencias
-          run: bun i
-        - name: test
-          run: bun run vitest:run
-        - name: build
-          run: bun run dev
+  pipeline:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: instalar dependencias
+        run: bun i
+      - name: test
+        run: bun run vitest:run
+      - name: build
+        run: bun run dev
         # en este paso poner los test E2E
         # - name: E2E
-          # uses: 
-        - name: heroku
-          run: echo ${{ secrets.GITHUB_TOKEN }}
-          # lalalala
+        # uses:
+      - name: heroku
+        if: ${{github.event_name == 'push'}}
+        run:
+          echo ${{ secrets.GITHUB_TOKEN }}

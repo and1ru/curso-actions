@@ -1,0 +1,49 @@
+name: paralelo
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  primer-job:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: primer-job
+        run: echo 1
+
+  segundo-job:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: segundo-job
+        run: echo 2
+
+  tercer-job:
+    needs: [primer-job, segundo-job]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+
+  cuarto-job:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+  
+  quinto-job:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: instalar dependencias
+        run: bun i
+
+  sexto-job:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: test
+        run: bun run vitest:run
+
+  septimo-job:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: build
+        run: bun run dev
